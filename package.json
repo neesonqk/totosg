@@ -1,0 +1,26 @@
+{
+  "name": "totosg",
+  "version": "0.0.3",
+  "description": "grab singapore toto lottery results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Singapore",
+    "ToTo"
+  ],
+  "author": "11:25",
+  "license": "ISC",
+  "bin": {
+    "totosg": "./index.js"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "cli-table": "^0.3.1",
+    "lodash": "^4.17.4",
+    "node-random-number": "^0.1.1",
+    "phantom": "^4.0.1",
+    "trim": "0.0.1"
+  }
+}
