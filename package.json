@@ -10,6 +10,11 @@
     "Singapore",
     "ToTo"
   ],
+  "files": [
+      "index.js",
+      "package.json",
+      "readme.md"
+  ],
   "author": "11:25",
   "license": "ISC",
   "bin": {
