@@ -1,6 +1,6 @@
 {
   "name": "totosg",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "grab singapore toto lottery results",
   "main": "index.js",
   "scripts": {
