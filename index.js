@@ -11,6 +11,17 @@ var pjson = require('./package.json')
 var command = process.argv[2]
 
 switch (command) {
+    case "-v":
+        console.log(pjson.version);
+        break;
+    case "-h":
+        var table = new Table({
+            head: ['Command', 'Description']
+        });
+        table.push(["gen, generate", "Generate 3 random draws."])
+        table.push(["get, [blank]", "Get latest toto result."])
+        console.log(table.toString());
+        break;
     case "gen":
     case "generate":
         var table = new Table({
@@ -26,7 +37,6 @@ switch (command) {
         console.log(table.toString());
         console.log("");
         break;
-
     case "get":
     default:
     getFromServer();
@@ -34,7 +44,7 @@ switch (command) {
 
 function getFromServer() {
     console.log("Retrieving latest toto result...");
-    phantom.create([], {logLevel: 'error'}).then(ph => {
+    phantom.create(['--ignore-ssl-errors=yes', '--load-images=no'], {logLevel: 'error'}).then(ph => {
         _ph = ph;
         return _ph.createPage();
     }).then(page => {
@@ -42,7 +52,6 @@ function getFromServer() {
         //return _page.open('http://www.singaporepools.com.sg/en/product/Pages/toto_results.aspx');
         return _page.open('http://www.singaporepools.com.sg/en/product/sr/Pages/toto_results.aspx');
     }).then(status => {
-        console.log(status);
         return _page.property('content')
     }).then(content => {
         const $ = cheerio.load(content);
