@@ -1,7 +1,11 @@
 {
   "name": "totosg",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "grab singapore toto lottery results",
+  "homepage": "https://github.com/neesonqk/totosg",
+  "bugs": {
+    "url": "https://github.com/neesonqk/totosg/issues"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
